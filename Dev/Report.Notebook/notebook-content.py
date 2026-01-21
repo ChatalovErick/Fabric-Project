@@ -30,8 +30,10 @@
 
 # ## 2. Data Sources
 # + **Lufthansa Developer Center:** Used for real-time Flight Status (delays, arrival/departure times) and Schedule Data (planned routes and durations).
+#     + https://developer.lufthansa.com/
 # 
 # + **The Aviation Herald:** Scraped or ingested historical data regarding flight accidents, crashes, and incidents categorized by aircraft type and airline.
+#     + https://avherald.com/
 
 # MARKDOWN ********************
 
