@@ -1,5 +1,11 @@
 # Data Engineering Project: Aviation Intelligence & Safety Analysis
-<img width="1505" height="528" alt="image" src="https://github.com/user-attachments/assets/469c3e77-cf03-4ab8-8989-6c25a8f71954" />
+
+
+<p align="center">
+  <img width="1505" height="528" alt="image" src="https://github.com/user-attachments/assets/469c3e77-cf03-4ab8-8989-6c25a8f71954" />
+  <br>
+  <i><b>Figure 1:</b> Fabric Project Task Flow</i>
+</p>
 
 ## 1. Project Objectives
 The goal of this project is to build an end-to-end data pipeline that correlates real-time flight operations with historical safety records to provide a holistic view of airline performance. This project analyzes the aviation landscape within Germany, specifically focusing on major hubs (Frankfurt, Munich, Berlin, etc.). By correlating real-time flight status from Lufthansa with historical safety events from the Aviation Herald
