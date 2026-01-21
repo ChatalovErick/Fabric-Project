@@ -113,6 +113,11 @@ Each pipeline follows a standardized workflow within Fabric to maintain the Meda
 + **Gold Upsert:** The final Notebook performs a "Merge" (Upsert) operation into the Gold Delta tables to prevent duplicate records.
 + **Semantic Link:** Once the Gold table is updated, the Power BI Direct Lake mode automatically reflects the changes without requiring a separate dataset refresh.
 
+### 5.3 Technical Benefits of this Approach
+**Parallelism:** Multiple pipelines can run simultaneously, reducing the total "Time-to-Insight."
+**Error Isolation:** If the Lufthansa API is down, the Aviation Herald pipeline can still finish its run.
+**Resource Efficiency:** Smaller, frequent updates for Flight Status consume fewer Fabric Capacity units than a single "monolith" pipeline.
+
 ## 6. Challenges & Lessons Learned
 During the development of this project, several technical and architectural challenges were encountered and addressed:
 
