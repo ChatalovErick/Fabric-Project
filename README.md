@@ -118,24 +118,41 @@ Each pipeline follows a standardized workflow within Fabric to maintain the Meda
 **Error Isolation:** If the Lufthansa API is down, the Aviation Herald pipeline can still finish its run.
 **Resource Efficiency:** Smaller, frequent updates for Flight Status consume fewer Fabric Capacity units than a single "monolith" pipeline.
 
-## 6. Challenges & Lessons Learned
+## 6. Semantic Model
+
+<p align="center">
+  <img width="817" height="636" alt="image" src="https://github.com/user-attachments/assets/3b157fdb-40aa-488c-8c46-c848e5e82a09" />
+  <br>
+  <i><b>Figure 2:</b> Semantic Model</i>
+</p>
+
+### 6.1 The "Activity" Tables (The Facts)
+In the corners of your model, you have your Fact Tables. These are lists of things that happened:
++ **Schedules:** What we planned to do.
++ **Flight Status:** What actually happened (the real-time reality).
++ **Aviation Herald:** Any safety incidents or "events" that occurred.
+
+### 6.2. The "Filter" Tables (The Dimensions)
+The tables in the center (Date, Airports, Airlines, Aircrafts) are your Dimensions.
+
+## 7. Challenges & Lessons Learned
 During the development of this project, several technical and architectural challenges were encountered and addressed:
 
-### 6.1 File System Design & Data Ingestion
+### 7.1 File System Design & Data Ingestion
 + **Issue:** I spent a significant amount of time designing the initial file system structure for the Aviation Herald JSON data.
 + **Impact:** This delayed the transition to the transformation phase, as the raw folder hierarchy needed to be intuitive enough to support both historical safety data and incremental updates.
 + **Resolution:** I eventually standardized a structure that separates raw scrapes by timestamp, allowing the Bronze layer to act as a reliable "Time Travel" repository for re-processing.
 
-### 6.2 Optimization of Compute Resources (Fabric Capacity)
+### 7.2 Optimization of Compute Resources (Fabric Capacity)
 + **Issue:** The pipeline relied heavily on Apache Spark for all transformation tasks, which led to high consumption of Fabric Capacity.
 + **Impact:** Processing smaller datasets or simple transformations using Spark clusters was sometimes inefficient compared to the overhead required to spin up the nodes.
 + **Lesson Learned:** For future iterations, I would utilize the Pandas library for smaller, non-distributed data transformations. Balancing Spark for large-scale Lufthansa datasets and Pandas for localized Aviation Herald processing would result in better resource management and lower costs.
 
-### 6.3 Dataflow Gen2 & Schema Mapping
+### 7.3 Dataflow Gen2 & Schema Mapping
 + **Issue:** I faced difficulties using Dataflow Gen2 to transform the Aviation Herald data into the Silver and Gold layers.
 + **Impact:** It was challenging to extract and isolate the most significant columns (like specific aircraft sub-models or standardized airline names) from the semi-structured scraped data.
 
-# 7. Final Insights (From Dashboard)
+# 8. Final Insights (From Dashboard)
 + **Reliability:** Frankfurt (FRA) currently maintains an average arrival delay of 3.87, with the majority of flights being Early (30 flights) or On Time (16 flights).
 + **Schedule Volume:** Munich (MUC) is the top destination with 57 scheduled flights, followed by Frankfurt (FRA) with 52.
 + **Safety Trends:** The B738 and A21N aircraft types show the highest historical accident counts in the Aviation Herald dataset, providing a critical safety lens for operational data.
