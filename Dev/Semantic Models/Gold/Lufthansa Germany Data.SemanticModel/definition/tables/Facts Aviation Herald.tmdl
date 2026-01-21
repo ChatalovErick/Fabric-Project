@@ -1,0 +1,104 @@
+table 'Facts Aviation Herald'
+	lineageTag: e9fabf34-104e-4de8-b614-3b3f567b63a8
+	sourceLineageTag: [Gold].[aviationheralddata]
+
+	measure 'Count of Types' = COUNT('Facts Aviation Herald'[Type])
+		formatString: 0
+		lineageTag: 350d1b28-6a62-4873-81e2-214b64446613
+
+		changedProperty = Name
+
+	measure 'Total Events' = COUNTROWS('Facts Aviation Herald')
+		formatString: 0
+		lineageTag: 5bbffa78-ca28-4af7-a61b-cb0df3ef3350
+
+		changedProperty = Name
+
+	measure 'Total Crashes' = ```
+			
+			CALCULATE(
+			    COUNT('Facts Aviation Herald'[Type]), 
+			    'Facts Aviation Herald'[Type] = "Crash"
+			)
+			```
+		formatString: 0
+		lineageTag: 0dc58421-19a1-415e-8910-0008d05a2620
+
+		changedProperty = Name
+
+	measure 'Total Accidents' = ```
+			
+			CALCULATE(
+			    COUNT('Facts Aviation Herald'[Type]), 
+			    'Facts Aviation Herald'[Type] = "Accident"
+			)
+			```
+		formatString: 0
+		lineageTag: 6a8d93f8-ef59-49d5-bbed-bb0a5aca78fc
+
+		changedProperty = Name
+
+	column Type
+		dataType: string
+		lineageTag: 1c4653e2-ac8e-4b2a-881c-dcc39dd59236
+		sourceLineageTag: Type
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 291759b9-6914-4b94-8575-98b83e91e80e
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirlineName
+		dataType: string
+		lineageTag: 6d39e914-4fd8-43e5-9913-dd4f17703017
+		sourceLineageTag: AirlineName
+		summarizeBy: none
+		sourceColumn: AirlineName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AircraftCode
+		dataType: string
+		lineageTag: e650fe3d-a4d9-4b4f-a60f-e0fa583f7c9e
+		sourceLineageTag: AircraftCode
+		summarizeBy: none
+		sourceColumn: AircraftCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Timestamp
+		dataType: string
+		lineageTag: 40e48f29-8dd8-448e-b446-3e1b75279256
+		sourceLineageTag: Timestamp
+		summarizeBy: none
+		sourceColumn: Timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column Events
+		dataType: string
+		lineageTag: 3b0e4832-97f4-4977-b6ca-d14637b499de
+		sourceLineageTag: Events
+		summarizeBy: none
+		sourceColumn: Events
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Facts Aviation Herald' = entity
+		mode: directLake
+		source
+			entityName: aviationheralddata
+			schemaName: Gold
+			expressionSource: 'DirectLake - Fabric_Project_LakeHouse'
+
+	changedProperty = Name
+

@@ -1,0 +1,76 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Data Tables Reference Data Clean up Gold (DataFlow Gen2)",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "5baa5484-e3e0-49b9-8a98-32b66ee5755f",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_aircrafts": {
+      "queryId": "6b7917c9-37c9-42ae-a650-33cefbacb8ee",
+      "queryName": "Silver_lufthansadata_aircrafts",
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_airlines": {
+      "queryId": "01b0f2c9-0b0c-46f2-9f4f-fd0f6ce8af07",
+      "queryName": "Silver_lufthansadata_airlines",
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_airports": {
+      "queryId": "0f463353-32dc-4b51-8295-c115ac746668",
+      "queryName": "Silver_lufthansadata_airports",
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_cities": {
+      "queryId": "6d430cd2-b806-4a91-bd8c-8ba6edeccc97",
+      "queryName": "Silver_lufthansadata_cities",
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_countries": {
+      "queryId": "e9b64665-a7f0-4518-a91d-9653126f9423",
+      "queryName": "Silver_lufthansadata_countries",
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_aircrafts_DataDestination": {
+      "queryId": "ba37fdfe-7bbb-47c7-9911-04a9632c9574",
+      "queryName": "Silver_lufthansadata_aircrafts_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_airports_DataDestination": {
+      "queryId": "b9475a53-bc2e-4ed7-a2fa-a98367af8960",
+      "queryName": "Silver_lufthansadata_airports_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_cities_DataDestination": {
+      "queryId": "061d68b3-70b6-4ec6-84b5-6aba23a7dfbf",
+      "queryName": "Silver_lufthansadata_cities_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_airlines_DataDestination": {
+      "queryId": "d1ca8e1a-86f1-4631-a28f-0860a9393f25",
+      "queryName": "Silver_lufthansadata_airlines_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"859c4984-5e67-4c66-ab4f-8c7ba10be907\",\"DatasourceId\":\"a4fff1ff-8d27-4fff-9474-a34d3bee5364\"}"
+    },
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"859c4984-5e67-4c66-ab4f-8c7ba10be907\",\"DatasourceId\":\"7378c788-2f4a-4db5-ab9f-3099e6567df6\"}"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+table 'Dim Airports'
+	lineageTag: 39c377df-88b1-4938-8bfb-063aea26d77c
+	sourceLineageTag: [Gold].[lufthansadata_airports]
+
+	column AirportCode
+		dataType: string
+		lineageTag: 350c39ef-08b1-41fc-9365-2d926bce7114
+		sourceLineageTag: AirportCode
+		summarizeBy: none
+		sourceColumn: AirportCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirportName
+		dataType: string
+		lineageTag: 435684ba-66b5-4e1e-9cd9-69c8a71cce0c
+		sourceLineageTag: AirportName
+		summarizeBy: none
+		sourceColumn: AirportName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CityCode
+		dataType: string
+		lineageTag: 29282f78-0b32-4a53-969b-9680a2dfa61d
+		sourceLineageTag: CityCode
+		summarizeBy: none
+		sourceColumn: CityCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryCode
+		dataType: string
+		lineageTag: e324aa88-bed4-426f-b5e4-f9e434258265
+		sourceLineageTag: CountryCode
+		summarizeBy: none
+		sourceColumn: CountryCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CityName
+		dataType: string
+		lineageTag: 52cde0e4-c133-49cf-8bb0-f84894c6f2e7
+		sourceLineageTag: CityName
+		summarizeBy: none
+		sourceColumn: CityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryName
+		dataType: string
+		lineageTag: 70a84eba-c7a4-43e8-82e3-f04eb522b350
+		sourceLineageTag: CountryName
+		summarizeBy: none
+		sourceColumn: CountryName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Airports' = entity
+		mode: directLake
+		source
+			entityName: lufthansadata_airports
+			schemaName: Gold
+			expressionSource: 'DirectLake - Fabric_Project_LakeHouse'
+
+	changedProperty = Name
+

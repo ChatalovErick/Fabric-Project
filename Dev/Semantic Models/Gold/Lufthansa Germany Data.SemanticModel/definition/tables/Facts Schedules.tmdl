@@ -1,0 +1,107 @@
+table 'Facts Schedules'
+	lineageTag: 04f4093f-c5bf-499d-9b90-915192f69a13
+	sourceLineageTag: [Gold].[lufthansadata_germany_schedule]
+
+	measure 'Total Schedules' = COUNTROWS('Facts Schedules')
+		formatString: 0
+		lineageTag: a646e3ac-0c3f-4248-8402-2fdeed3ee464
+
+		changedProperty = Name
+
+	column FlightNumber
+		dataType: string
+		lineageTag: 0310658a-1c28-4699-89a8-c813b7f166a6
+		sourceLineageTag: FlightNumber
+		summarizeBy: none
+		sourceColumn: FlightNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column AircraftCode
+		dataType: string
+		lineageTag: ba544264-1424-43c3-b267-da92d9784402
+		sourceLineageTag: Aircraft
+		summarizeBy: none
+		sourceColumn: Aircraft
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin
+		dataType: string
+		lineageTag: 329e5abf-0c46-44a7-8b4a-e09c61ea52a3
+		sourceLineageTag: Origin
+		summarizeBy: none
+		sourceColumn: Origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination
+		dataType: string
+		lineageTag: fb963a3c-4e44-4006-acb5-9e1d411c2e3a
+		sourceLineageTag: Destination
+		summarizeBy: none
+		sourceColumn: Destination
+
+		annotation SummarizationSetBy = Automatic
+
+	column DepartureTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e4fe3f36-49e3-4be4-a395-220dc8bf8298
+		sourceLineageTag: DepartureTime
+		summarizeBy: none
+		sourceColumn: DepartureTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ArrivalTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ff332754-3431-4e46-9851-698b661ee25d
+		sourceLineageTag: ArrivalTime
+		summarizeBy: none
+		sourceColumn: ArrivalTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column DurationMinutes
+		dataType: int64
+		formatString: 0
+		lineageTag: 9558c5df-6caf-47c1-9135-7687b4a3a665
+		sourceLineageTag: DurationMinutes
+		summarizeBy: sum
+		sourceColumn: DurationMinutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column DepartureDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 91fd7eba-b3e0-4db0-969e-3d1f1234224d
+		sourceLineageTag: DepartureDate
+		summarizeBy: none
+		sourceColumn: DepartureDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ArrivalDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d0eb54b9-9793-4f05-bb7f-f96b5c655cdc
+		sourceLineageTag: ArrivalDate
+		summarizeBy: none
+		sourceColumn: ArrivalDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Facts Schedules' = entity
+		mode: directLake
+		source
+			entityName: lufthansadata_germany_schedule
+			schemaName: Gold
+			expressionSource: 'DirectLake - Fabric_Project_LakeHouse'
+
+	changedProperty = Name
+

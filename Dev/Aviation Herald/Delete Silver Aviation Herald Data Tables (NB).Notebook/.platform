@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Delete Silver Aviation Herald Data Tables (NB)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f4505bfc-a53b-9f74-47b6-e7946078f667"
+  }
+}

@@ -1,0 +1,56 @@
+relationship f66fa361-543f-d859-b512-a5688b557763
+	fromColumn: 'Facts Flight Status'.AirlineCode
+	toColumn: 'Dim Airlines'.AirlineCode
+
+relationship 7463ce9c-d268-9aeb-964f-b57e70f32648
+	fromColumn: 'Facts Flight Status'.AircraftCode
+	toColumn: 'Dim Aircrafts'.AircraftCode
+
+relationship 123bb384-5af1-2229-846e-ebc4edb9ac69
+	fromColumn: 'Facts Flight Status'.Origin
+	toColumn: 'Dim Airports'.AirportCode
+
+relationship 908dda1e-e80b-c9b3-b29a-44104019aa27
+	isActive: false
+	fromColumn: 'Facts Flight Status'.Destination
+	toColumn: 'Dim Airports'.AirportCode
+
+relationship f3c75a5b-c6c0-5b42-0ebb-5f6fe6c2dc6f
+	fromColumn: 'Facts Aviation Herald'.AircraftCode
+	toColumn: 'Dim Aircrafts'.AircraftCode
+
+relationship 24383f17-52e6-3779-554f-1dfbc65b092d
+	fromColumn: 'Facts Aviation Herald'.AirlineName
+	toColumn: 'Dim Airlines'.AirlineName
+
+relationship e65f9803-1896-a5f4-c8d2-bb8481156df5
+	isActive: false
+	fromColumn: 'Facts Schedules'.ArrivalDate
+	toColumn: date_table.Date
+
+relationship 6d7fee39-beaf-6c30-6ece-4aa9d46c5f6c
+	fromColumn: 'Facts Schedules'.DepartureDate
+	toColumn: date_table.Date
+
+relationship 2c38722c-97bc-29a4-4892-8c4063be650f
+	fromColumn: 'Facts Schedules'.Origin
+	toColumn: 'Dim Airports'.AirportCode
+
+relationship d80ab825-7b7e-5e8e-d60d-5b05b4a30070
+	isActive: false
+	fromColumn: 'Facts Schedules'.Destination
+	toColumn: 'Dim Airports'.AirportCode
+
+relationship 5ed0206e-e582-79ab-3be7-781420e97fbc
+	fromColumn: 'Facts Flight Status'.ScheduledArrivalDate
+	toColumn: date_table.Date
+
+relationship 6cc0a010-01d2-f4e3-49c4-02d0289e1968
+	isActive: false
+	fromColumn: 'Facts Flight Status'.ScheduledDepartureDate
+	toColumn: date_table.Date
+
+relationship 8ce02ea2-aa03-d348-5ab5-6def4c1dfed0
+	fromColumn: 'Facts Aviation Herald'.Date
+	toColumn: date_table.Date
+

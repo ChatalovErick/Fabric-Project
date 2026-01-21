@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Silver Flight Status Data Tables Transfer (NB)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bdcba5f9-3ed5-a922-414d-8e6bcbfcf03f"
+  }
+}

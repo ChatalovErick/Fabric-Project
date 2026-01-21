@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Power BI date table"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1a757714-a15b-a9c1-4d9e-21130a764981"
+  }
+}

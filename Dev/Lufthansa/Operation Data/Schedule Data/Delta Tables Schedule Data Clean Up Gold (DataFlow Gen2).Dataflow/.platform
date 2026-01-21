@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Delta Tables Schedule Data Clean Up Gold (DataFlow Gen2)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4d2d70d0-5d23-88fc-46c1-1578a4661bbc"
+  }
+}

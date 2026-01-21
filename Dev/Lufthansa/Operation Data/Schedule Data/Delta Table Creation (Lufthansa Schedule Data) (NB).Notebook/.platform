@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Delta Table Creation (Lufthansa Schedule Data) (NB)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d50941bd-3739-8905-46af-6399dab91c7a"
+  }
+}

@@ -1,0 +1,41 @@
+table 'Dim Airlines'
+	lineageTag: 6165ee6a-f422-4a3a-bc44-6f0eb97c7d2b
+	sourceLineageTag: [Gold].[lufthansadata_airlines]
+
+	column AirlineID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c5a25ca-29ee-430d-a94f-221ba065c077
+		sourceLineageTag: AirlineID
+		summarizeBy: count
+		sourceColumn: AirlineID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirlineCode
+		dataType: string
+		lineageTag: 14888622-05b3-4d6e-8b6e-d3857782db66
+		sourceLineageTag: AirlineCode
+		summarizeBy: none
+		sourceColumn: AirlineCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirlineName
+		dataType: string
+		lineageTag: f515c960-43ad-478d-b943-075d924e3417
+		sourceLineageTag: AirlineName
+		summarizeBy: none
+		sourceColumn: AirlineName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Airlines' = entity
+		mode: directLake
+		source
+			entityName: lufthansadata_airlines
+			schemaName: Gold
+			expressionSource: 'DirectLake - Fabric_Project_LakeHouse'
+
+	changedProperty = Name
+

@@ -1,0 +1,31 @@
+table 'Dim Aircrafts'
+	lineageTag: 90952c28-4e8a-4ef0-a542-04ced0fa64cb
+	sourceLineageTag: [Gold].[lufthansadata_aircrafts]
+
+	column AircraftCode
+		dataType: string
+		lineageTag: 1321c1ae-d477-4bb8-9955-0a512cd0eee3
+		sourceLineageTag: AircraftCode
+		summarizeBy: none
+		sourceColumn: AircraftCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AircraftName
+		dataType: string
+		lineageTag: f0148eb5-c9b7-4dde-b904-847a8964c742
+		sourceLineageTag: AircraftName
+		summarizeBy: none
+		sourceColumn: AircraftName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Aircrafts' = entity
+		mode: directLake
+		source
+			entityName: lufthansadata_aircrafts
+			schemaName: Gold
+			expressionSource: 'DirectLake - Fabric_Project_LakeHouse'
+
+	changedProperty = Name
+

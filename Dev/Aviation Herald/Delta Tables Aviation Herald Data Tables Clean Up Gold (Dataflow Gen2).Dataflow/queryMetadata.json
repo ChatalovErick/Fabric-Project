@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Delta Reference Data Tables Clean Up Gold (Dataflow Gen2)",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "14b08b90-b3e0-4ad8-aaf3-07b75106dbda",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Silver_aviationheralddata": {
+      "queryId": "430306be-663d-4d4d-b543-46f465397b46",
+      "queryName": "Silver_aviationheralddata",
+      "loadEnabled": false
+    },
+    "Silver_aviationheralddata_DataDestination": {
+      "queryId": "fe2f71ff-6479-4cb6-ae3a-789da81a76fd",
+      "queryName": "Silver_aviationheralddata_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"859c4984-5e67-4c66-ab4f-8c7ba10be907\",\"DatasourceId\":\"a4fff1ff-8d27-4fff-9474-a34d3bee5364\"}"
+    }
+  ]
+}

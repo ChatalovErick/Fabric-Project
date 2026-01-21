@@ -1,0 +1,292 @@
+table 'Facts Flight Status'
+	lineageTag: 90865055-6a68-4c75-8288-f6fc4bf3c178
+	sourceLineageTag: [Gold].[lufthansadata_germany_flight_status]
+
+	measure 'Total Flights' = COUNTROWS('Facts Flight Status')
+		formatString: 0
+		lineageTag: 4da38dba-d0fc-4a70-b4fd-ee4e7cf01c72
+
+		changedProperty = Name
+
+	measure 'Avg Arrival Delay (Min)' = ```
+			
+			VAR TotalDelayMinutes = 
+			    SUMX(
+			        'Facts Flight Status',
+			        IF(
+			            'Facts Flight Status'[ActualArrivalTime] > 'Facts Flight Status'[ScheduledArrivalTime],
+			            DATEDIFF('Facts Flight Status'[ScheduledArrivalTime], 'Facts Flight Status'[ActualArrivalTime], MINUTE),
+			            0
+			        )
+			    )
+			RETURN
+			AVERAGEX(
+			    'Facts Flight Status',
+			    DATEDIFF('Facts Flight Status'[ScheduledArrivalTime], 'Facts Flight Status'[ActualArrivalTime], MINUTE)
+			)
+			```
+		lineageTag: fa420381-1cf9-4b70-9ec0-287cb4a2c4e5
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Arrival Status Count' = COUNT('Facts Flight Status'[ArrivalStatus])
+		formatString: 0
+		lineageTag: 5f1ae6aa-aa58-4d0d-a60d-ab90fe1b215a
+
+		changedProperty = Name
+
+	measure 'Avg Arrival Delay (Late Only)' =
+			
+			AVERAGEX(
+			    'Facts Flight Status',
+			    MAX(0, DATEDIFF('Facts Flight Status'[ScheduledArrivalTime], 'Facts Flight Status'[ActualArrivalTime], MINUTE))
+			)
+		lineageTag: 7c156952-e965-4020-817b-a46234f9df60
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Departure Delay (Min)' = ```
+			
+			VAR TotalDelayMinutes = 
+			    SUMX(
+			        'Facts Flight Status',
+			        IF(
+			            'Facts Flight Status'[ActualDepartureTime] > 'Facts Flight Status'[ActualDepartureTime],
+			            DATEDIFF('Facts Flight Status'[ActualDepartureTime], 'Facts Flight Status'[ActualDepartureTime], MINUTE),
+			            0
+			        )
+			    )
+			RETURN
+			AVERAGEX(
+			    'Facts Flight Status',
+			    DATEDIFF('Facts Flight Status'[ActualDepartureTime], 'Facts Flight Status'[ActualDepartureTime], MINUTE)
+			)
+			```
+		lineageTag: 12896550-23b5-4602-807d-5bf093c54e1f
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Departure Delay (Late Only)' =
+			
+			AVERAGEX(
+			    'Facts Flight Status',
+			    MAX(0, DATEDIFF('Facts Flight Status'[ScheduledDepartureTime], 'Facts Flight Status'[ActualDepartureTime], MINUTE))
+			)
+		formatString: 0
+		lineageTag: 5a6f34f1-ea6b-4a27-a0a2-73fc115b43bf
+
+		changedProperty = Name
+
+	measure 'Departure Status Count' = COUNT('Facts Flight Status'[DepartureStatus])
+		formatString: 0
+		lineageTag: 450acd4d-f01d-4fcf-96be-2a596a6b6c1c
+
+		changedProperty = Name
+
+	measure 'Total Arrivals for Selected Airport' =
+			
+			CALCULATE(
+			    COUNTROWS('Facts Flight Status'),
+			    USERELATIONSHIP('Facts Flight Status'[Destination], 'Dim Airports'[AirportCode])
+			)
+		formatString: 0
+		lineageTag: 08d3f1f4-9420-4159-a39f-8b40f28a107b
+
+		changedProperty = Name
+
+	measure 'Total Departures for Selected Airport' =
+			
+			CALCULATE(
+			    COUNTROWS('Facts Flight Status'),
+			    USERELATIONSHIP('Facts Flight Status'[Origin], 'Dim Airports'[AirportCode])
+			)
+		formatString: 0
+		lineageTag: 6b6ea4f2-f5c7-40aa-a396-f48b56349496
+
+		changedProperty = Name
+
+	measure 'Avg Travel Time per Route' = ```
+			
+			AVERAGEX(
+			    'Facts Flight Status',
+			    DATEDIFF(
+			        'Facts Flight Status'[ActualDepartureTime], 
+			        'Facts Flight Status'[ActualArrivalTime], 
+			        MINUTE
+			    )
+			)
+			```
+		lineageTag: 78cc4c59-ea2c-42e7-9ca5-c89e2d6e5c07
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AircraftCode
+		dataType: string
+		lineageTag: 2937a8cd-38d2-469b-897a-8b91aa8fd978
+		sourceLineageTag: AircraftCode
+		summarizeBy: none
+		sourceColumn: AircraftCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActualArrivalTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 664fd1c4-6173-4939-a34e-803e985c093d
+		sourceLineageTag: ActualArrivalTime
+		summarizeBy: none
+		sourceColumn: ActualArrivalTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScheduledArrivalTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 21caf51f-f0bc-444a-8530-e7e1142d01df
+		sourceLineageTag: ScheduledArrivalTime
+		summarizeBy: none
+		sourceColumn: ScheduledArrivalTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ArrivalStatus
+		dataType: string
+		lineageTag: e2324417-0143-486a-acb7-daf44380f910
+		sourceLineageTag: ArrivalStatus
+		summarizeBy: none
+		sourceColumn: ArrivalStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column AirlineCode
+		dataType: string
+		lineageTag: b9eb2f00-81d3-4db0-8116-cd45e6eec234
+		sourceLineageTag: Carrier
+		summarizeBy: none
+		sourceColumn: Carrier
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActualDepartureTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4fabcbbf-9e8e-4495-bacf-c13339e81163
+		sourceLineageTag: ActualDepartureTime
+		summarizeBy: none
+		sourceColumn: ActualDepartureTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScheduledDepartureTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 861d752f-3422-4650-90d6-3153e12e51f7
+		sourceLineageTag: ScheduledDepartureTime
+		summarizeBy: none
+		sourceColumn: ScheduledDepartureTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column DepartureStatus
+		dataType: string
+		lineageTag: d11c5d65-7161-44cd-8ea4-0b36e6ca04a9
+		sourceLineageTag: DepartureStatus
+		summarizeBy: none
+		sourceColumn: DepartureStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination
+		dataType: string
+		lineageTag: 40759019-0d2d-4748-991a-c1decedc7377
+		sourceLineageTag: Destination
+		summarizeBy: none
+		sourceColumn: Destination
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlightNumber
+		dataType: string
+		lineageTag: 0ee2dd3c-710b-4433-9849-bc7702aabe71
+		sourceLineageTag: FlightNumber
+		summarizeBy: none
+		sourceColumn: FlightNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlightStatus
+		dataType: string
+		lineageTag: e92494ee-a586-4c4d-b33b-0d4734b37502
+		sourceLineageTag: FlightStatus
+		summarizeBy: none
+		sourceColumn: FlightStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin
+		dataType: string
+		lineageTag: b017681b-b069-413e-b8cb-b3add92aecd7
+		sourceLineageTag: Origin
+		summarizeBy: none
+		sourceColumn: Origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column MovementType
+		dataType: string
+		lineageTag: ec5ed87c-5e83-4624-ba3e-4caa4e2f2b57
+		sourceLineageTag: MovementType
+		summarizeBy: none
+		sourceColumn: MovementType
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ingest_ts
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1108412c-fa18-47c2-9884-543fbb4b8a94
+		sourceLineageTag: _ingest_ts
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScheduledArrivalDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 69b370c4-fad0-491d-9182-1e80d552aa4c
+		sourceLineageTag: ScheduledArrivalDate
+		summarizeBy: none
+		sourceColumn: ScheduledArrivalDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScheduledDepartureDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: db21c4a0-8cca-4427-a043-4ddefeabd157
+		sourceLineageTag: ScheduledDepartureDate
+		summarizeBy: none
+		sourceColumn: ScheduledDepartureDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Facts Flight Status' = entity
+		mode: directLake
+		source
+			entityName: lufthansadata_germany_flight_status
+			schemaName: Gold
+			expressionSource: 'DirectLake - Fabric_Project_LakeHouse'
+
+	changedProperty = Name
+

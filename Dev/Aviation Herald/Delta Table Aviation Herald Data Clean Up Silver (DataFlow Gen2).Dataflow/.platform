@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Delta Table Aviation Herald Data Clean Up Silver (DataFlow Gen2)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0da51abe-33ce-bbbd-4ab1-709041806f82"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Silver Reference Data Tables Transfer (NB) "
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "29f1d9e1-f50e-b005-43b5-e70529ea0de1"
+  }
+}

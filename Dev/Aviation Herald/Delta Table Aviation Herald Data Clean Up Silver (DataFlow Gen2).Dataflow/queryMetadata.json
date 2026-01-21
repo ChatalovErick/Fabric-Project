@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Bronze_to_Silver_Delta_Table_Aviation_Herald_Data",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "a3635cfe-4205-410e-b632-db07114dc795",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Bronze aviationheralddata": {
+      "queryId": "f9b36089-0f4e-4823-9553-df2d67942cde",
+      "queryName": "Bronze aviationheralddata",
+      "loadEnabled": false
+    },
+    "Bronze aviationheralddata_DataDestination": {
+      "queryId": "bde81f84-a006-4b20-8649-97649195ed2d",
+      "queryName": "Bronze aviationheralddata_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"859c4984-5e67-4c66-ab4f-8c7ba10be907\",\"DatasourceId\":\"a4fff1ff-8d27-4fff-9474-a34d3bee5364\"}"
+    }
+  ]
+}

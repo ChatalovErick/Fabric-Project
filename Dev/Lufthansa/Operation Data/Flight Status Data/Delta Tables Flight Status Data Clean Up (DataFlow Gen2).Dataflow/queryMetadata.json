@@ -1,0 +1,44 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Delta Tables Operation Data Clean Up (DataFlow Gen2)",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "67990852-b72c-4073-9dd9-6396ceadb894",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_germany_airport_connections": {
+      "queryId": "1fc7108b-0fb8-4ac0-9ce6-02b890a0d05c",
+      "queryName": "Bronze lufthansadata_germany_airport_connections",
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_germany_flight_status": {
+      "queryId": "33bb3356-ce84-4831-9417-e2b0a66f83a5",
+      "queryName": "Bronze lufthansadata_germany_flight_status",
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_germany_airport_connections_DataDestination": {
+      "queryId": "186d96d1-e9e8-4d44-b8bd-263387cb3638",
+      "queryName": "Bronze lufthansadata_germany_airport_connections_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_germany_flight_status_DataDestination": {
+      "queryId": "3f9ba921-27e9-4a94-8534-17750cb4bb8e",
+      "queryName": "Bronze lufthansadata_germany_flight_status_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"859c4984-5e67-4c66-ab4f-8c7ba10be907\",\"DatasourceId\":\"a4fff1ff-8d27-4fff-9474-a34d3bee5364\"}"
+    }
+  ]
+}

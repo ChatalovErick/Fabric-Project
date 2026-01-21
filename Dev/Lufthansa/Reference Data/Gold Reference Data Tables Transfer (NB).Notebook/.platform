@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Gold Reference Data Tables Transfer (NB)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "defba8b0-d1bd-b159-4f24-4048162d2b09"
+  }
+}

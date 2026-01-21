@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Delta Tables Flight Status Data Clean Up Gold (DataFlow Gen2)",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "cd626d44-f2d1-4dda-8a82-07638623ceb5",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Silver lufthansadata_germany_flight_status": {
+      "queryId": "9f3975b5-c927-46b5-b489-3c8f35cbe917",
+      "queryName": "Silver lufthansadata_germany_flight_status",
+      "loadEnabled": false
+    },
+    "Silver lufthansadata_germany_flight_status_DataDestination": {
+      "queryId": "8ff43a57-90ec-4834-803f-0812efb89a27",
+      "queryName": "Silver lufthansadata_germany_flight_status_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"859c4984-5e67-4c66-ab4f-8c7ba10be907\",\"DatasourceId\":\"a4fff1ff-8d27-4fff-9474-a34d3bee5364\"}"
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "config": "{\"version\":\"5.69\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY25SU12\",\"type\":2,\"version\":{\"visual\":\"2.5.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"}}},\"activeSectionIndex\":2,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "filters": "[{\"name\":\"8564dd212db1a253d517\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Dim Airports\"}},\"Property\":\"CountryName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dim Airports\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CountryName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Germany'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "8d5b6c316b88e2325ea3",
+      "config": "{}",
+      "name": "11c8f0905e09740a9696",
+      "parameters": "[{\"name\":\"28d60eb43d2dae007bd3\",\"boundFilter\":\"de8585f10a4c48ad7b48\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Facts Schedules\"}},\"Property\":\"DurationMinutes\"}}}]",
+      "type": 1
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY25SU12",
+            "path": "BaseThemes/CY25SU12.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "lufthansa41003500534702664.png",
+            "path": "lufthansa41003500534702664.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Flight Status",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "76f123678e08b34e3698",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0530bc1c83674e0c2a78\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.4642356241234,\"y\":350.40673211781206,\"z\":2000,\"width\":469.5652173913043,\"height\":144.4039270687237,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"Facts Flight Status.Avg Arrival Delay (Late Only)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Avg Arrival Delay (Late Only)\"},\"Name\":\"Facts Flight Status.Avg Arrival Delay (Late Only)\",\"NativeReferenceName\":\"Avg Arrival Delay (Late Only)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Avg Arrival Delay (Late Only)\"}}}]},\"columnProperties\":{\"Facts Flight Status.Avg Arrival Delay (Late Only)\":{\"formatString\":\"0.00\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"axis\":[{\"properties\":{\"max\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}},\"target\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average Arrival Delay'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 144.40,
+          "width": 469.57,
+          "x": 253.46,
+          "y": 350.41,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"2e20390666b0b4b6573a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":758.3730715287518,\"y\":36.35343618513324,\"z\":8000,\"width\":424.1234221598878,\"height\":117.13884992987377,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Facts Flight Status.ScheduledDepartureDate\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"ScheduledDepartureDate\"},\"Name\":\"Facts Flight Status.ScheduledDepartureDate\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"ScheduledDepartureDate\"}}}]},\"columnProperties\":{\"Facts Flight Status.ScheduledDepartureDate\":{\"displayName\":\"Date\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2026-01-18T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"ScheduledDepartureDate\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-01-18T00:00:00'\"}}}}}]}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 117.14,
+          "width": 424.12,
+          "x": 758.37,
+          "y": 36.35,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"33f9210472a7bedb00b8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1225.9186535764375,\"y\":16.157082748948106,\"z\":7000,\"width\":41.40252454417952,\"height\":40.39270687237026,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rightArrow'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'8d5b6c316b88e2325ea3'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.39,
+          "width": 41.40,
+          "x": 1225.92,
+          "y": 16.16,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"3436e8604003270d1008\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.4642356241234,\"y\":512.9873772791024,\"z\":5000,\"width\":469.5652173913043,\"height\":194.89481065918653,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Facts Flight Status.Origin\",\"active\":true}],\"Y\":[{\"queryRef\":\"Facts Flight Status.Total Arrivals for Selected Airport\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Origin\"},\"Name\":\"Facts Flight Status.Origin\",\"NativeReferenceName\":\"Origin\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Arrivals for Selected Airport\"},\"Name\":\"Facts Flight Status.Total Arrivals for Selected Airport\",\"NativeReferenceName\":\"Total Arrivals for Selected Airport\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Arrivals for Selected Airport\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Arrivals'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 194.89,
+          "width": 469.57,
+          "x": 253.46,
+          "y": 512.99,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"58ddec27d1156860895b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.4642356241234,\"y\":175.70827489481064,\"z\":1000,\"width\":469.5652173913043,\"height\":156.52173913043478,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Facts Flight Status.Arrival Status Count\"}],\"Category\":[{\"queryRef\":\"Facts Flight Status.ArrivalStatus\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Arrival Status Count\"},\"Name\":\"Facts Flight Status.Arrival Status Count\",\"NativeReferenceName\":\"Arrival Status Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"ArrivalStatus\"},\"Name\":\"Facts Flight Status.ArrivalStatus\",\"NativeReferenceName\":\"ArrivalStatus\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Arrival Status Count\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"ribbonBands\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Arrival Status Count'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 156.52,
+          "width": 469.57,
+          "x": 253.46,
+          "y": 175.71,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"5cbacfb76a00076a9cb0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":758.3730715287518,\"y\":175.70827489481064,\"z\":3000,\"width\":488.7517531556802,\"height\":156.52173913043478,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Facts Flight Status.Departure Status Count\"}],\"Category\":[{\"queryRef\":\"Facts Flight Status.DepartureStatus\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Departure Status Count\"},\"Name\":\"Facts Flight Status.Departure Status Count\",\"NativeReferenceName\":\"Departure Status Count\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"DepartureStatus\"},\"Name\":\"Facts Flight Status.DepartureStatus\",\"NativeReferenceName\":\"DepartureStatus\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Departure Status Count\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Departure Status Count'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 156.52,
+          "width": 488.75,
+          "x": 758.37,
+          "y": 175.71,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"9fe392520980d8b0b165\",\"layouts\":[{\"id\":0,\"position\":{\"x\":758.3730715287518,\"y\":512.9873772791024,\"z\":6000,\"width\":488.7517531556802,\"height\":194.89481065918653,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Facts Flight Status.Destination\",\"active\":true}],\"Y\":[{\"queryRef\":\"Facts Flight Status.Total Departures for Selected Airport\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Destination\"},\"Name\":\"Facts Flight Status.Destination\",\"NativeReferenceName\":\"Destination\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Departures for Selected Airport\"},\"Name\":\"Facts Flight Status.Total Departures for Selected Airport\",\"NativeReferenceName\":\"Total Departures for Selected Airport\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Departures for Selected Airport\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Departures'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 194.89,
+          "width": 488.75,
+          "x": 758.37,
+          "y": 512.99,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"d43a62df2b006a09556e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":758.3730715287518,\"y\":350.40673211781206,\"z\":4000,\"width\":488.7517531556802,\"height\":144.4039270687237,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"Facts Flight Status.Avg Departure Delay (Late Only)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Avg Departure Delay (Late Only)\"},\"Name\":\"Facts Flight Status.Avg Departure Delay (Late Only)\",\"NativeReferenceName\":\"Avg Departure Delay (Late Only)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Avg Departure Delay (Late Only)\"}}}]},\"columnProperties\":{\"Facts Flight Status.Avg Departure Delay (Late Only)\":{\"formatString\":\"0.00\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"axis\":[{\"properties\":{\"max\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}},\"target\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average Departure Delay'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 144.40,
+          "width": 488.75,
+          "x": 758.37,
+          "y": 350.41,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"dd0b5a82e3c306b39c08\",\"layouts\":[{\"id\":0,\"position\":{\"x\":11.107994389901823,\"y\":175.70827489481064,\"z\":0,\"width\":226.19915848527347,\"height\":532.1739130434783,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim Airports.AirportName\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dim Airports\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AirportName\"},\"Name\":\"Dim Airports.AirportName\",\"NativeReferenceName\":\"AirportName\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dim Airports\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AirportName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Frankfurt'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Airport Name'\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 532.17,
+          "width": 226.20,
+          "x": 11.11,
+          "y": 175.71,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"fecee82e19dc27255c5b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":253.4642356241234,\"y\":16.157082748948106,\"z\":9000,\"width\":226.19915848527347,\"height\":149.45301542776997,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"image\":[{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'lufthansa.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"lufthansa41003500534702664.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}},\"fit\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 149.45,
+          "width": 226.20,
+          "x": 253.46,
+          "y": 16.16,
+          "z": 9000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"relationships\":[{\"source\":\"9515fee00d2ac2089c50\",\"target\":\"63fa8bb4249505aa21aa\",\"type\":3},{\"source\":\"63fa8bb4249505aa21aa\",\"target\":\"520f1aea0a0787deba41\",\"type\":1}]}",
+      "displayName": "Schedule data",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"de8585f10a4c48ad7b48\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Facts Schedules\"}},\"Property\":\"DurationMinutes\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "8d5b6c316b88e2325ea3",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"397f5dc242501c59a051\",\"layouts\":[{\"id\":0,\"position\":{\"x\":259.52314165497893,\"y\":175.70827489481064,\"z\":2000,\"width\":336.26928471248243,\"height\":530.1542776998597,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Facts Schedules.Total Schedules\"}],\"Category\":[{\"queryRef\":\"Facts Schedules.Destination\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Schedules\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Schedules\"},\"Name\":\"Facts Schedules.Total Schedules\",\"NativeReferenceName\":\"Total Schedules\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Destination\"},\"Name\":\"Facts Schedules.Destination\",\"NativeReferenceName\":\"Destination\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Schedules\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 530.15,
+          "width": 336.27,
+          "x": 259.52,
+          "y": 175.71,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"4da0d7da89b71c08105d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1218.8499298737727,\"y\":23.225806451612904,\"z\":6000,\"width\":61.598877980364655,\"height\":40.39270687237026,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'rightArrow'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'8ede18960880a5008c1d'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.39,
+          "width": 61.60,
+          "x": 1218.85,
+          "y": 23.23,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"520f1aea0a0787deba41\",\"layouts\":[{\"id\":0,\"position\":{\"x\":613.969144460028,\"y\":175.70827489481064,\"z\":3000,\"width\":639.2145862552594,\"height\":530.1542776998597,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Facts Schedules.Origin\"},{\"queryRef\":\"Facts Schedules.Destination\"},{\"queryRef\":\"Facts Schedules.DepartureTime\"},{\"queryRef\":\"Facts Schedules.ArrivalTime\"},{\"queryRef\":\"Sum(Facts Schedules.DurationMinutes)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Schedules\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Origin\"},\"Name\":\"Facts Schedules.Origin\",\"NativeReferenceName\":\"Origin\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Destination\"},\"Name\":\"Facts Schedules.Destination\",\"NativeReferenceName\":\"Destination\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"DepartureTime\"},\"Name\":\"Facts Schedules.DepartureTime\",\"NativeReferenceName\":\"DepartureTime\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"ArrivalTime\"},\"Name\":\"Facts Schedules.ArrivalTime\",\"NativeReferenceName\":\"ArrivalTime\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"DurationMinutes\"}},\"Function\":0},\"Name\":\"Sum(Facts Schedules.DurationMinutes)\",\"NativeReferenceName\":\"Sum of DurationMinutes\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Origin\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"175.33380484367598D\"}}}},\"selector\":{\"metadata\":\"Facts Schedules.ArrivalTime\"}}],\"total\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 530.15,
+          "width": 639.21,
+          "x": 613.97,
+          "y": 175.71,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"63fa8bb4249505aa21aa\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.137447405329592,\"y\":175.70827489481064,\"z\":0,\"width\":226.19915848527347,\"height\":530.1542776998597,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim Airports.AirportName\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dim Airports\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AirportName\"},\"Name\":\"Dim Airports.AirportName\",\"NativeReferenceName\":\"AirportName\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 530.15,
+          "width": 226.20,
+          "x": 14.14,
+          "y": 175.71,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"6a1333cf09a63649bd88\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.157082748948106,\"y\":23.225806451612904,\"z\":4000,\"width\":99.9719495091164,\"height\":40.39270687237026,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'leftArrow'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'PageNavigation'\"}}},\"navigationSection\":{\"expr\":{\"Literal\":{\"Value\":\"'76f123678e08b34e3698'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.39,
+          "width": 99.97,
+          "x": 16.16,
+          "y": 23.23,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"9515fee00d2ac2089c50\",\"layouts\":[{\"id\":0,\"position\":{\"x\":504.9088359046283,\"y\":23.225806451612904,\"z\":1000,\"width\":639.2145862552594,\"height\":140.36465638148667,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Facts Schedules.DepartureDate\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Schedules\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"DepartureDate\"},\"Name\":\"Facts Schedules.DepartureDate\",\"NativeReferenceName\":\"DepartureDate\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"DepartureDate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2026-01-20T00:00:00'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2026-01-20T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Schedules\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"DepartureDate\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-01-20T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"DepartureDate\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-01-21T00:00:00'\"}}}}}}}]}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 140.36,
+          "width": 639.21,
+          "x": 504.91,
+          "y": 23.23,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"c619d779519a81de8cde\",\"layouts\":[{\"id\":0,\"position\":{\"x\":259.52314165497893,\"y\":8.078541374474053,\"z\":5000,\"width\":226.19915848527347,\"height\":149.45301542776997,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"image\":[{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'lufthansa.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"lufthansa41003500534702664.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}},\"fit\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 149.45,
+          "width": 226.20,
+          "x": 259.52,
+          "y": 8.08,
+          "z": 5000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"relationships\":[{\"source\":\"d4c05926706024b30529\",\"target\":\"30a4808fd772915b7155\",\"type\":3},{\"source\":\"d4c05926706024b30529\",\"target\":\"37f54fee6249e1a9b38b\",\"type\":3},{\"source\":\"d4c05926706024b30529\",\"target\":\"21ac1049db873b70529d\",\"type\":3}]}",
+      "displayName": "Overall data",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "8ede18960880a5008c1d",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"21ac1049db873b70529d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":604.8807854137448,\"y\":444.31977559607293,\"z\":10000,\"width\":330.21037868162693,\"height\":264.57223001402525,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Facts Aviation Herald.AirlineName\",\"active\":true}],\"Y\":[{\"queryRef\":\"Facts Aviation Herald.Total Crashes\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Aviation Herald\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"AirlineName\"},\"Name\":\"Facts Aviation Herald.AirlineName\",\"NativeReferenceName\":\"AirlineName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Crashes\"},\"Name\":\"Facts Aviation Herald.Total Crashes\",\"NativeReferenceName\":\"Total Crashes\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Crashes\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Crashes by Airline Name'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 264.57,
+          "width": 330.21,
+          "x": 604.88,
+          "y": 444.32,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"30a4808fd772915b7155\",\"layouts\":[{\"id\":0,\"position\":{\"x\":948.218793828892,\"y\":184.79663394109397,\"z\":8000,\"width\":315.0631136044881,\"height\":249.4249649368864,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Facts Aviation Herald.AirlineName\",\"active\":true}],\"Y\":[{\"queryRef\":\"Facts Aviation Herald.Total Accidents\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Aviation Herald\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"AirlineName\"},\"Name\":\"Facts Aviation Herald.AirlineName\",\"NativeReferenceName\":\"AirlineName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Accidents\"},\"Name\":\"Facts Aviation Herald.Total Accidents\",\"NativeReferenceName\":\"Total Accidents\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Accidents\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Accidents by Aircraft Code'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 249.42,
+          "width": 315.06,
+          "x": 948.22,
+          "y": 184.80,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"370c5b4911d695ca4087\",\"layouts\":[{\"id\":0,\"position\":{\"x\":255.48387096774192,\"y\":184.79663394109397,\"z\":2000,\"width\":331.22019635343617,\"height\":249.4249649368864,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim Airlines.AirlineName\",\"active\":true}],\"Y\":[{\"queryRef\":\"Facts Flight Status.Total Flights\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Dim Airlines\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Flights\"},\"Name\":\"Facts Flight Status.Total Flights\",\"NativeReferenceName\":\"Total Flights\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AirlineName\"},\"Name\":\"Dim Airlines.AirlineName\",\"NativeReferenceName\":\"AirlineName\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Flights\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Flights by Airline Name'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"3a1fd091ee750b397a50\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Dim Aircrafts\"}},\"Property\":\"AircraftName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dim Aircrafts\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AircraftName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 249.42,
+          "width": 331.22,
+          "x": 255.48,
+          "y": 184.80,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"37f54fee6249e1a9b38b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":947.2089761570827,\"y\":444.31977559607293,\"z\":9000,\"width\":317.0827489481066,\"height\":264.57223001402525,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Facts Aviation Herald.AircraftCode\",\"active\":true}],\"Y\":[{\"queryRef\":\"Facts Aviation Herald.Total Crashes\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Aviation Herald\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"AircraftCode\"},\"Name\":\"Facts Aviation Herald.AircraftCode\",\"NativeReferenceName\":\"AircraftCode\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Crashes\"},\"Name\":\"Facts Aviation Herald.Total Crashes\",\"NativeReferenceName\":\"Total Crashes\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Crashes\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Crashes by Aircraft Code'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 264.57,
+          "width": 317.08,
+          "x": 947.21,
+          "y": 444.32,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"6e2742f98ca873776a09\",\"layouts\":[{\"id\":0,\"position\":{\"x\":255.48387096774192,\"y\":444.31977559607293,\"z\":1000,\"width\":331.22019635343617,\"height\":264.57223001402525,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim Aircrafts.AircraftCode\",\"active\":true}],\"Y\":[{\"queryRef\":\"Facts Flight Status.Total Flights\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Flight Status\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Dim Aircrafts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AircraftCode\"},\"Name\":\"Dim Aircrafts.AircraftCode\",\"NativeReferenceName\":\"AircraftCode\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Flights\"},\"Name\":\"Facts Flight Status.Total Flights\",\"NativeReferenceName\":\"Total Flights\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Flights\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Flights by Aircraft Code'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"79b1d3705b53ab9b6a07\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Dim Aircrafts\"}},\"Property\":\"AircraftCode\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dim Aircrafts\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"AircraftCode\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 264.57,
+          "width": 331.22,
+          "x": 255.48,
+          "y": 444.32,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"7f25c19f88cd04d0a80d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":71.69705469845722,\"y\":26.255259467040673,\"z\":4000,\"width\":226.19915848527347,\"height\":149.45301542776997,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"image\":[{\"properties\":{\"sourceFile\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'lufthansa.png'\"}}},\"url\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"lufthansa41003500534702664.png\"}}},\"scaling\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}},\"fit\":{\"expr\":{\"Literal\":{\"Value\":\"'Fit'\"}}}}}]},\"vcObjects\":{}}}",
+          "filters": "[]",
+          "height": 149.45,
+          "width": 226.20,
+          "x": 71.70,
+          "y": 26.26,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"a580e6f08db38040d799\",\"layouts\":[{\"id\":0,\"position\":{\"x\":605.890603085554,\"y\":75.73632538569424,\"z\":11000,\"width\":656.3814866760168,\"height\":99.9719495091164,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Facts Aviation Herald.Date\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Aviation Herald\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Date\"},\"Name\":\"Facts Aviation Herald.Date\",\"NativeReferenceName\":\"Date\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2009-03-09T00:00:00'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2026-01-17T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Aviation Herald\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2009-03-09T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Date\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2026-01-18T00:00:00'\"}}}}}}}]}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 99.97,
+          "width": 656.38,
+          "x": 605.89,
+          "y": 75.74,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"cf300811216870814706\",\"layouts\":[{\"id\":0,\"position\":{\"x\":15.147265077138849,\"y\":184.79663394109397,\"z\":0,\"width\":224.17952314165498,\"height\":524.0953716690042,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Dim Airports.CityName\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dim Airports\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CityName\"},\"Name\":\"Dim Airports.CityName\",\"NativeReferenceName\":\"CityName\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Dim Airports\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CityName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Berlin'\"}}]]}}}]}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 524.10,
+          "width": 224.18,
+          "x": 15.15,
+          "y": 184.80,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"d2d8de356e282da299c4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":8.078541374474053,\"y\":26.255259467040673,\"z\":5000,\"width\":99.9719495091164,\"height\":40.39270687237026,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'leftArrow'\"}}}},\"selector\":{\"id\":\"default\"}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.39,
+          "width": 99.97,
+          "x": 8.08,
+          "y": 26.26,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"d4c05926706024b30529\",\"layouts\":[{\"id\":0,\"position\":{\"x\":605.890603085554,\"y\":184.79663394109397,\"z\":7000,\"width\":330.21037868162693,\"height\":249.4249649368864,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Facts Aviation Herald.AircraftCode\",\"active\":true}],\"Y\":[{\"queryRef\":\"Facts Aviation Herald.Total Accidents\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Facts Aviation Herald\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"AircraftCode\"},\"Name\":\"Facts Aviation Herald.AircraftCode\",\"NativeReferenceName\":\"AircraftCode\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Accidents\"},\"Name\":\"Facts Aviation Herald.Total Accidents\",\"NativeReferenceName\":\"Total Accidents\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Total Accidents\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Accidents by Airline Name'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 249.42,
+          "width": 330.21,
+          "x": 605.89,
+          "y": 184.80,
+          "z": 7000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

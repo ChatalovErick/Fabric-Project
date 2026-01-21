@@ -1,0 +1,127 @@
+table date_table
+	lineageTag: 4808be2d-fc97-425b-9d0f-79a7df03f9f8
+	sourceLineageTag: [Gold].[date_table]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0396d32a-ec1c-4e86-a997-86437ffe5590
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: ac7a03ff-416f-495c-b7cb-e79b758a82e5
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fe3cc95-451b-47f0-abe0-d935180e5e6f
+		sourceLineageTag: MonthNumber
+		summarizeBy: sum
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 1a1fd6c8-8193-43a6-904f-a36add589c3f
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthShort
+		dataType: string
+		lineageTag: 00dd2f99-e451-47d4-b989-c95dc27a8b4c
+		sourceLineageTag: MonthShort
+		summarizeBy: none
+		sourceColumn: MonthShort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 25e866c1-2b87-4b9b-b1dd-9fb9e999e422
+		sourceLineageTag: Quarter
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterLabel
+		dataType: string
+		lineageTag: c1c58245-d80b-4807-8923-d47a80d51964
+		sourceLineageTag: QuarterLabel
+		summarizeBy: none
+		sourceColumn: QuarterLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: int64
+		formatString: 0
+		lineageTag: b2972a57-ec7c-4558-891f-a72b19ae5420
+		sourceLineageTag: DayOfMonth
+		summarizeBy: sum
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 1fc40cb3-f304-4a4e-8104-1e19277f011a
+		sourceLineageTag: DayOfWeekNumber
+		summarizeBy: sum
+		sourceColumn: DayOfWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekName
+		dataType: string
+		lineageTag: f1b174df-f27c-4dcd-a2c0-927fba97a2fa
+		sourceLineageTag: DayOfWeekName
+		summarizeBy: none
+		sourceColumn: DayOfWeekName
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e652b16-84b4-4b90-8af2-c47d2e72daec
+		sourceLineageTag: WeekOfYear
+		summarizeBy: sum
+		sourceColumn: WeekOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthKey
+		dataType: int64
+		formatString: 0
+		lineageTag: adb7ab0b-3097-437b-b0ab-168e223ffccd
+		sourceLineageTag: YearMonthKey
+		summarizeBy: count
+		sourceColumn: YearMonthKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition date_table = entity
+		mode: directLake
+		source
+			entityName: date_table
+			schemaName: Gold
+			expressionSource: 'DirectLake - Fabric_Project_LakeHouse'
+

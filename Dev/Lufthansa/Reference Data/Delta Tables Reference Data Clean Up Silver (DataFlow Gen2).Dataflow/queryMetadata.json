@@ -1,0 +1,77 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Delta Reference Data Tables Clean Up",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "Bronze lufthansadata_aircrafts": {
+      "queryId": "79867304-ad63-4a15-9ec7-e53d2b7c1380",
+      "queryName": "Bronze lufthansadata_aircrafts",
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_airlines": {
+      "queryId": "4c411ef0-d916-43cd-b98e-d9a255ccdb1c",
+      "queryName": "Bronze lufthansadata_airlines",
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_airports": {
+      "queryId": "de287851-7057-4213-975f-f1893d77aeff",
+      "queryName": "Bronze lufthansadata_airports",
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_cities": {
+      "queryId": "760f376c-7bb9-4fe1-abdf-77c945cf1e3c",
+      "queryName": "Bronze lufthansadata_cities",
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_aircrafts_DataDestination": {
+      "queryId": "59e988fe-2665-4d3f-a0e0-1efa9fa6c535",
+      "queryName": "Bronze lufthansadata_aircrafts_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_airlines_DataDestination": {
+      "queryId": "0dc7a772-5806-45f8-8d02-16ca6b8ae344",
+      "queryName": "Bronze lufthansadata_airlines_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_airports_DataDestination": {
+      "queryId": "578a64a4-ff0c-4a11-b933-6a08e8b13f63",
+      "queryName": "Bronze lufthansadata_airports_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_countries": {
+      "queryId": "2f2b0a24-3a4b-43ff-a742-8b878b456925",
+      "queryName": "Bronze lufthansadata_countries",
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_countries_DataDestination": {
+      "queryId": "f574d7e6-417e-467d-81a4-015c59852943",
+      "queryName": "Bronze lufthansadata_countries_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "DefaultDestination": {
+      "queryId": "df57a0ba-745a-401d-844c-9321ba214afa",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Bronze lufthansadata_cities_DataDestination": {
+      "queryId": "6b2556b3-0d2e-4153-9bd4-0172be70a88f",
+      "queryName": "Bronze lufthansadata_cities_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"859c4984-5e67-4c66-ab4f-8c7ba10be907\",\"DatasourceId\":\"a4fff1ff-8d27-4fff-9474-a34d3bee5364\"}"
+    }
+  ]
+}

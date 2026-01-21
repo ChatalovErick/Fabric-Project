@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Lufthansa Schedule Data Gathering (NB)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "76d6dadf-ddbe-a0a5-4c9a-148a15aa7548"
+  }
+}

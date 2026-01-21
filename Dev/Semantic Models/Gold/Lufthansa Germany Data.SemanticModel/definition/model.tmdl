@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectLake - Fabric_Project_LakeHouse"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","RemoteModeling"]
+
+ref table 'Facts Flight Status'
+ref table 'Dim Airlines'
+ref table 'Dim Aircrafts'
+ref table 'Dim Airports'
+ref table 'Facts Aviation Herald'
+ref table 'Facts Schedules'
+ref table date_table
+

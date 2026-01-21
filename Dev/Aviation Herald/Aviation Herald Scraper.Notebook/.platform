@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Aviation Herald Scraper"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c87a7500-56e7-ae99-4c2b-bfdedf0a3e26"
+  }
+}

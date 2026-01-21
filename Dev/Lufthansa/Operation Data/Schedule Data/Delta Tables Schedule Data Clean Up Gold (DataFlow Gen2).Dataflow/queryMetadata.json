@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Delta Tables Schedule Data Clean Up Gold (DataFlow Gen2)",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "eb8bb6d8-2e08-40af-b469-38bc4a82eae4",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_germany_schedule": {
+      "queryId": "1d2e038c-31cd-42cf-8e19-2e9f1ff5ab78",
+      "queryName": "Silver_lufthansadata_germany_schedule",
+      "loadEnabled": false
+    },
+    "Silver_lufthansadata_germany_schedule_DataDestination": {
+      "queryId": "6f91cf03-247c-4ecf-baef-29cafff7b5cc",
+      "queryName": "Silver_lufthansadata_germany_schedule_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"859c4984-5e67-4c66-ab4f-8c7ba10be907\",\"DatasourceId\":\"a4fff1ff-8d27-4fff-9474-a34d3bee5364\"}"
+    }
+  ]
+}

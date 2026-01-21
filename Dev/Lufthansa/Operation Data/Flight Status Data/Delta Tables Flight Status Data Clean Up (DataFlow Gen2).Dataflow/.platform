@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Delta Tables Flight Status Data Clean Up (DataFlow Gen2)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "048833eb-b121-be9b-4d39-5b74b5be3a3d"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Aviation Herald Data Gold"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1cd149f2-75ec-9e7d-40bf-8602fcb74ab7"
+  }
+}

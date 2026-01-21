@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Data Tables Reference Data Clean up Gold (DataFlow Gen2)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "56d6a97c-cd68-b09f-4d0d-ab7ccd002c84"
+  }
+}

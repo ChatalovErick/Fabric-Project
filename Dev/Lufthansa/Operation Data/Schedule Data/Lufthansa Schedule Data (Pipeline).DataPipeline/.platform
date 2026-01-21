@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Lufthansa Schedule Data (Pipeline)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "67732742-6709-9051-4267-f0b8d1770d32"
+  }
+}

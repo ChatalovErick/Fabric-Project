@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Lufthansa Flight Status Data (Pipeline)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0547eda9-8a35-ae94-4186-52e47d42c939"
+  }
+}
