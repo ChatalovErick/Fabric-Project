@@ -93,24 +93,44 @@ I extracted master data for Airports, Airlines, Cities, Countries, and Aircraft 
 I chose to use Notebooks to move data between layers because they provide better control over Delta Lake features. Using Spark commands ensures that the Gold layer tables are always optimized and ready for the
 Power BI Direct Lake connection, which is faster than traditional Import methods.
 
-## 5. Challenges & Lessons Learned
+## 5. Pipeline Orchestration & Workflow
+I designed a modular orchestration strategy where each data domain is governed by its own dedicated pipeline. This ensures that failures in one domain (e.g., a scraping error in Aviation Herald) do not block the processing of other domains like Flight Status.
+
+### 5.1. Pipeline Overview
+| Data Source | Description | Update Frequency | Acquisition Method |
+| :--- | :--- | :--- | :--- |
+| `Flight_Status` | Real-time delays & operational hub data | High Frequency (4 hours) | Lufthansa API |
+| `Schedules` | Planned flight paths and route frequencies | Daily | Lufthansa API |
+| `Reference_Data` | Master lists (Airports, Airlines, Aircraft) | Monthly / On-Demand | Lufthansa API |
+| `Aviation_Herald Data` | Historical safety incidents & aircraft safety | Daily | Web Scraper |
+
+### 5.2 Multi-Pipeline Execution Logic
+Each pipeline follows a standardized workflow within Fabric to maintain the Medallion integrity:
+
++ **Ingestion Activity:** Calls a Notebook or Script to pull raw data into Bronze.
++ **Validation Gate:** A check ensures the file was written successfully before proceeding.
++ **Silver Transformation:** A PySpark Notebook flattens the JSON and enforces schemas.
++ **Gold Upsert:** The final Notebook performs a "Merge" (Upsert) operation into the Gold Delta tables to prevent duplicate records.
++ **Semantic Link:** Once the Gold table is updated, the Power BI Direct Lake mode automatically reflects the changes without requiring a separate dataset refresh.
+
+## 6. Challenges & Lessons Learned
 During the development of this project, several technical and architectural challenges were encountered and addressed:
 
-### 5.1 File System Design & Data Ingestion
+### 6.1 File System Design & Data Ingestion
 + **Issue:** I spent a significant amount of time designing the initial file system structure for the Aviation Herald JSON data.
 + **Impact:** This delayed the transition to the transformation phase, as the raw folder hierarchy needed to be intuitive enough to support both historical safety data and incremental updates.
 + **Resolution:** I eventually standardized a structure that separates raw scrapes by timestamp, allowing the Bronze layer to act as a reliable "Time Travel" repository for re-processing.
 
-### 5.2 Optimization of Compute Resources (Fabric Capacity)
+### 6.2 Optimization of Compute Resources (Fabric Capacity)
 + **Issue:** The pipeline relied heavily on Apache Spark for all transformation tasks, which led to high consumption of Fabric Capacity.
 + **Impact:** Processing smaller datasets or simple transformations using Spark clusters was sometimes inefficient compared to the overhead required to spin up the nodes.
 + **Lesson Learned:** For future iterations, I would utilize the Pandas library for smaller, non-distributed data transformations. Balancing Spark for large-scale Lufthansa datasets and Pandas for localized Aviation Herald processing would result in better resource management and lower costs.
 
-### 5.3 Dataflow Gen2 & Schema Mapping
+### 6.3 Dataflow Gen2 & Schema Mapping
 + **Issue:** I faced difficulties using Dataflow Gen2 to transform the Aviation Herald data into the Silver and Gold layers.
 + **Impact:** It was challenging to extract and isolate the most significant columns (like specific aircraft sub-models or standardized airline names) from the semi-structured scraped data.
 
-# 6. Final Insights (From Dashboard)
+# 7. Final Insights (From Dashboard)
 + **Reliability:** Frankfurt (FRA) currently maintains an average arrival delay of 3.87, with the majority of flights being Early (30 flights) or On Time (16 flights).
 + **Schedule Volume:** Munich (MUC) is the top destination with 57 scheduled flights, followed by Frankfurt (FRA) with 52.
 + **Safety Trends:** The B738 and A21N aircraft types show the highest historical accident counts in the Aviation Herald dataset, providing a critical safety lens for operational data.
