@@ -152,7 +152,3 @@ During the development of this project, several technical and architectural chal
 + **Issue:** I faced difficulties using Dataflow Gen2 to transform the Aviation Herald data into the Silver and Gold layers.
 + **Impact:** It was challenging to extract and isolate the most significant columns (like specific aircraft sub-models or standardized airline names) from the semi-structured scraped data.
 
-# 8. Final Insights (From Dashboard)
-+ **Reliability:** Frankfurt (FRA) currently maintains an average arrival delay of 3.87, with the majority of flights being Early (30 flights) or On Time (16 flights).
-+ **Schedule Volume:** Munich (MUC) is the top destination with 57 scheduled flights, followed by Frankfurt (FRA) with 52.
-+ **Safety Trends:** The B738 and A21N aircraft types show the highest historical accident counts in the Aviation Herald dataset, providing a critical safety lens for operational data.
