@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Silver Aviation Herald Data Tables Transfer (NB)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "95980ce6-b8e8-a1af-4941-6e5ae1645310"
+  }
+}
