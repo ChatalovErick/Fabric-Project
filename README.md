@@ -4,6 +4,8 @@
 ![Dataflow Gen2](https://img.shields.io/badge/Dataflow%20Gen2-01B8AA?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 ![Pipelines](https://img.shields.io/badge/Pipelines-0078D4?style=for-the-badge&logo=azure-pipelines&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C80F?style=for-the-badge&logo=power-bi&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 
 <p align="center">
   <img width="1505" height="528" alt="image" src="https://github.com/user-attachments/assets/469c3e77-cf03-4ab8-8989-6c25a8f71954" />
