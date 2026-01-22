@@ -1,5 +1,9 @@
 # Data Engineering Project: Aviation Intelligence & Safety Analysis
-
+### 🛠 Technology Stack
+![Microsoft Fabric](https://img.shields.io/badge/Microsoft%20Fabric-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+![Dataflow Gen2](https://img.shields.io/badge/Dataflow%20Gen2-01B8AA?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+![Pipelines](https://img.shields.io/badge/Pipelines-0078D4?style=for-the-badge&logo=azure-pipelines&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 <p align="center">
   <img width="1505" height="528" alt="image" src="https://github.com/user-attachments/assets/469c3e77-cf03-4ab8-8989-6c25a8f71954" />
